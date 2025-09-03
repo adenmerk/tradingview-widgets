@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradingView Widgets</title>
+</head>
+<body style="margin:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:20px;background:#f5f5f5;">
+  
+  <!-- Example Widget 1: Mini Chart -->
+  <div class="tradingview-widget-container">
+    <div id="tradingview_chart"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "width": 800,
+        "height": 500,
+        "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "container_id": "tradingview_chart"
+      });
+    </script>
+  </div>
+
+  <!-- Example Widget 2: Ticker Tape -->
+  <div class="tradingview-widget-container" style="width:100%;">
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        { "proName": "NASDAQ:TSLA", "title": "Tesla" },
+        { "proName": "NASDAQ:NVDA", "title": "Nvidia" },
+        { "proName": "NASDAQ:AMD", "title": "AMD" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "light",
+      "isTransparent": false,
+      "displayMode": "adaptive",
+      "locale": "en"
+    }
+    </script>
+  </div>
+
+</body>
+</html>
